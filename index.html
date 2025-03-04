@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Silly Story Generator</title>
+    <style>
+      :root {
+        --primary-color: #ff6b6b;
+        --secondary-color: #4ecdc4;
+        --background-color: #f7fff7;
+        --text-color: #292f36;
+        --highlight-color: #ffe66d;
+      }
+
+      body {
+        font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+        background-color: var(--background-color);
+        color: var(--text-color);
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        line-height: 1.6;
+      }
+
+      .container {
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 25px;
+        margin-top: 30px;
+      }
+
+      h1 {
+        text-align: center;
+        color: var(--primary-color);
+        margin-bottom: 30px;
+        font-size: 2.2rem;
+      }
+
+      .input-group {
+        margin-bottom: 25px;
+      }
+
+      label {
+        font-weight: 600;
+        display: block;
+        margin-bottom: 8px;
+      }
+
+      .radio-group {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+      }
+
+      .radio-option {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+      }
+
+      input[type="text"] {
+        padding: 10px;
+        width: 100%;
+        border: 2px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+        transition: border-color 0.3s;
+      }
+
+      input[type="text"]:focus {
+        border-color: var(--secondary-color);
+        outline: none;
+      }
+
+      button.randomize {
+        background-color: var(--primary-color);
+        color: white;
+        border: none;
+        padding: 12px 20px;
+        font-size: 1rem;
+        font-weight: bold;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 100%;
+        transition: background-color 0.3s;
+      }
+
+      button.randomize:hover {
+        background-color: #ff5252;
+      }
+
+      .story {
+        background: var(--highlight-color);
+        color: var(--text-color);
+        padding: 20px;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        line-height: 1.7;
+        margin-top: 25px;
+        visibility: hidden;
+        border-left: 5px solid var(--primary-color);
+      }
+
+      .footer {
+        text-align: center;
+        margin-top: 30px;
+        font-size: 0.9rem;
+        color: #666;
+      }
+
+      @media (max-width: 480px) {
+        body {
+          padding: 15px;
+        }
+
+        .container {
+          padding: 20px;
+        }
+
+        h1 {
+          font-size: 1.8rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1>Silly Story Generator</h1>
+
+      <div class="input-group">
+        <label for="customname">Enter custom name:</label>
+        <input id="customname" type="text" placeholder="Enter a name..." />
+      </div>
+
+      <div class="input-group">
+        <label>Choose your measurement system:</label>
+        <div class="radio-group">
+          <div class="radio-option">
+            <input id="us" type="radio" name="ukus" value="us" checked />
+            <label for="us">US (Fahrenheit/Pounds)</label>
+          </div>
+          <div class="radio-option">
+            <input id="uk" type="radio" name="ukus" value="uk" />
+            <label for="uk">UK (Centigrade/Stone)</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="input-group">
+        <button class="randomize">Generate Random Story</button>
+      </div>
+
+      <p class="story"></p>
+    </div>
+
+    <div class="footer">
+      <p>Create your own wacky tales with just a click!</p>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
